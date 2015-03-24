@@ -1,14 +1,15 @@
-## What it is
+## Abstract
 
-Draft proposal to use stream compression on DNS packets without
-breaking backwards compatibility with DNS protocol.
+This document describes an application of data compression algorithms on DNS messages with the goal of reducing message size of frequent responses. The client proposes compression protocol which the server may use to compress an arbitrary part of the response.
 
 ## See it
 
-The `make publish` builds a HTML version of the draft in the branch `gh-pages`,
-so it can be viewed at [vavrusa.github.io/rfc-dnscomp][ghpages].
+The `make publish` builds a HTML version, the branch `gh-pages` contains a built `index.html` for GitHub Pages.
 
-## Building
+* HTML at [vavrusa.github.io/rfc-dnscomp][ghpages]
+* Data and measurements in [data](data).
+
+## Build it
 
 Depends on [miekg/mmark][mmark] and [xml2rfc][xml2rfc].
 
