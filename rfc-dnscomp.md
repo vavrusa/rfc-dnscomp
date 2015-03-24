@@ -41,26 +41,26 @@ document are to be interpreted as described in [@RFC2119].
 
 ## Terminology
 
-The reader is assumed to be familiar with the basic DNS and DNSSEC concepts described in [@RFC1034], [@RFC1035] and [@RFC6891].
+The reader is assumed to be familiar with the basic DNS and DNSSEC concepts described in [@!RFC1034], [@!RFC1035] and [@!RFC6891].
 The terms "compression", "decompression" are used as in [@RFC1951].
 
 ## Rationale
 
-The domain name compression was introduced in Section 4.1.4 of [@RFC1035] with the intent of reducing message length by
+The domain name compression was introduced in Section 4.1.4 of [@!RFC1035] with the intent of reducing message length by
 avoiding repetitive sequences of domain name labels. This has proven useful especially for the the UDP-carried messages,
 so the Section 6.1.2.4 of [@RFC1123] mandated the use of compression in responses.
 
 A domain name is represented by a sequence of labels, where the first octet denotes the label length, excluding itself.
 Each domain name is required to be terminated by a zero-length label representing the root domain name.
-[@RFC1035 section 2.3.4] declares that a label length **MUST** be 63 bytes or less. This requires the least significant 6 bits
+[@!RFC1035 section 2.3.4] declares that a label length **MUST** be 63 bytes or less. This requires the least significant 6 bits
 from the first octet for the label length, and leaves the 2 most significant bits reserved for second meaning.
 
 If both most significant bits have a value of '1', the following 14 bits represent a compression pointer, which denotes
 a position in the message where the next label continues. This position may also be a compression pointer, as it points backwards
-and the final name doesn't exceed the size limits defined in section 2.3.4 of [@RFC1035]. The method implies only the repetitive domain name labels
+and the final name doesn't exceed the size limits defined in section 2.3.4 of [@!RFC1035]. The method implies only the repetitive domain name labels
 may be compressed.
 
-Later, Section 5 of [@RFC6891] defined an extended label type, where the most significant two bits have a value of '01',
+Later, Section 5 of [@!RFC6891] defined an extended label type, where the most significant two bits have a value of '01',
 and the remaining 6 bits are used for extended label type. Section 3 of [@RFC3363] has shown that the extended label types
 are rejected as malformed by unaware DNS implementations.
 
@@ -69,7 +69,7 @@ and an OPT RR option COMPRESS to negotiate compression support. To ensure compat
 
 # How the remainder compression works
 
-The client proposes a compression algorithm via the COMPRESS OPT option, this mandates that the both client and the server support [@RFC6891] EDNS.
+The client proposes a compression algorithm via the COMPRESS OPT option, this mandates that the both client and the server support [@!RFC6891] EDNS.
 If the server doesn't support EDNS, no OPT RR is returned in the response and no compression occurs.
 A COMPRESS-aware server **MAY** place a compression indicator at any start of the label in the message, followed by the compressed remainder of the message.
 The server **SHOULD** use the client-proposed algorithm if it supports it, but it **MAY** use the mandatory algorithm as well.
@@ -80,7 +80,7 @@ and **SHOULD** try different algorithm next time. If the response isn't compress
 
 # The COMPRESS OPT option
 
-COMPRESS is an OPT RR [@RFC6891] option, that can be included once in the RDATA of an OPT RR in DNS messages.
+COMPRESS is an OPT RR [@!RFC6891] option, that can be included once in the RDATA of an OPT RR in DNS messages.
 
 The option is encoded in 5 bytes as shown below.
 
@@ -127,7 +127,7 @@ This document proposes an alternative remainder compression indicator:
     +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
 Figure: Compression indicator extended label type format.
 
-The "01" denotes the extended label type, as defined in Section 5 of [@RFC6891].
+The "01" denotes the extended label type, as defined in Section 5 of [@!RFC6891].
 The remaining part of the first octet "000001" defines a remainder compression indicator.
 The next octet represent the used compression algorithm.
 
@@ -160,7 +160,7 @@ tampering with responses known to the author.
 
 # Client considerations
 
-Client **MUST** follow fallback procedure as in Section 6.2.2 of [@RFC6891].
+Client **MUST** follow fallback procedure as in Section 6.2.2 of [@!RFC6891].
 
 # Performance considerations
 
