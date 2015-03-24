@@ -143,11 +143,13 @@ Note - a decompressed remainder of the message **MUST NOT** contain a compressio
 
 # Backward Compatibility
 
-The proposed label format *MAY NOT* be correctly processed by existing software, so the following considerations
+The proposed label format may not be correctly processed by existing software, so the following considerations
 must be taken into account:
 
 a. DNS header is never compressed, as it does not contain a domain name label.
+
 b. The proposed remainder compression indicator **MUST NOT** be used in domain name query.
+
 c. The proposed remainder compression **MUST NOT** be present in domain name response, unless proposed by the requestor.
 
 Applications intercepting response messages **MAY** misinterpret the message as malformed.

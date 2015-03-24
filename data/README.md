@@ -2,6 +2,17 @@
 
 There is a pcap file and a (k)dig output log for captured responses.
 
+## Queries
+
+* `+dnssec @a.root-servers.net NS .`
+* `+dnssec @a.root-servers.net NS cz`
+* `+dnssec @a.ns.nic.cz. AAAA a.ns.nic.cz.`
+* `+dnssec @a.ns.nic.cz. A non-existent-name.cz.`
+* `+edns=0 @a.root-servers.net NS .`       
+* `+edns=0 @a.root-servers.net NS cz`
+* `+edns=0 @a.ns.nic.cz. AAAA a.ns.nic.cz.`
+* `+edns=0 @a.ns.nic.cz. A non-existent-name.cz.`
+
 ## Metrics
 
 ```sh
