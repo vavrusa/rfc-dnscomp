@@ -5,7 +5,7 @@ The client proposes compression protocol which the server may use to compress an
 
 *TL;DR* this:
 
-* cuts the `IN .` *(already label-compressed)* response size by half
+* cuts the `NS .` *(already label-compressed)* response size by half
 * is applicable to any message type
 * is opt-in *(unlike label compression)*
 * ...and hopefully doesn't break the protocol.
