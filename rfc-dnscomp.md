@@ -53,13 +53,7 @@ so the [@RFC1123 section 6.1.2.4] mandated the use of compression in responses.
 A domain name is represented by a sequence of labels, where the first octet denotes the label length, excluding itself.
 Each domain name is required to be terminated by a zero-length label representing the root domain name.
 [@RFC1035 section 2.3.4] declares that a label length **MUST** be 63 bytes or less. This requires the least significant 6 bits
-from the first octet for the label length, and leaves the 2 most significant bits reserved for second meaning:
-
-{#fig:compr_ptr type="ascii-art" align=center}
-    +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-    | 1  1|                OFFSET                   |
-    +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-Figure: Domain name compression pointer format.
+from the first octet for the label length, and leaves the 2 most significant bits reserved for second meaning.
 
 If both most significant bits have a value of '1', the following 14 bits represent a compression pointer, which denotes
 a position in the message where the next label continues. This position may also be a compression pointer, as it points backwards
