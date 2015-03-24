@@ -46,9 +46,9 @@ The terms "compression", "decompression" are used as in [@RFC1951].
 
 ## Rationale
 
-The domain name compression was introduced in [@RFC1035 section 4.1.4] with the intent of reducing message length by
+The domain name compression was introduced in Section 4.1.4 of [@RFC1035] with the intent of reducing message length by
 avoiding repetitive sequences of domain name labels. This has proven useful especially for the the UDP-carried messages,
-so the [@RFC1123 section 6.1.2.4] mandated the use of compression in responses.
+so the Section 6.1.2.4 of [@RFC1123] mandated the use of compression in responses.
 
 A domain name is represented by a sequence of labels, where the first octet denotes the label length, excluding itself.
 Each domain name is required to be terminated by a zero-length label representing the root domain name.
@@ -57,11 +57,11 @@ from the first octet for the label length, and leaves the 2 most significant bit
 
 If both most significant bits have a value of '1', the following 14 bits represent a compression pointer, which denotes
 a position in the message where the next label continues. This position may also be a compression pointer, as it points backwards
-and the final name doesn't exceed the size limits [@RFC1035 section 2.3.4]. The method implies only the repetitive domain name labels
+and the final name doesn't exceed the size limits defined in section 2.3.4 of [@RFC1035]. The method implies only the repetitive domain name labels
 may be compressed.
 
-Later, [@RFC6891 section 5.] defined an extended label type, where the most significant two bits have a value of '01',
-and the remaining 6 bits are used for extended label type. [@RFC3363 section 3.] has shown that the extended label types
+Later, Section 5 of [@RFC6891] defined an extended label type, where the most significant two bits have a value of '01',
+and the remaining 6 bits are used for extended label type. Section 3 of [@RFC3363] has shown that the extended label types
 are rejected as malformed by unaware DNS implementations.
 
 The proposed compression method introduces an extended label type to indicate that the remainder of the message is compressed,
@@ -127,7 +127,7 @@ This document proposes an alternative remainder compression indicator:
     +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
 Figure: Compression indicator extended label type format.
 
-The "01" denotes the extended label type, as defined in the [@RFC6891 section 5.].
+The "01" denotes the extended label type, as defined in Section 5 of [@RFC6891].
 The remaining part of the first octet "000001" defines a remainder compression indicator.
 The next octet represent the used compression algorithm.
 
@@ -160,14 +160,18 @@ tampering with responses known to the author.
 
 # Client considerations
 
-Client **MUST** follow fallback procedure as in [@RFC6891 section 6.2.2.].
+Client **MUST** follow fallback procedure as in Section 6.2.2 of [@RFC6891].
 
 # Performance considerations
 
 @TODO@
+
 @REMARK@ Depends on algorithm and implementation, may be faster because of bandwidth savings, may be slower because of extra overhead.
+
 @REMARK@ LZ4 for example shows over 480MB/s compression speed on a single core, this is almost equal to 1M 512B packets/sec per core.
+
 @REMARK@ Response using this draft may not use label compression.
+
 @REMARK@ TODO: measurements on performance (nr. cycles per compressed/uncompressed response)
 
 # Security considerations
