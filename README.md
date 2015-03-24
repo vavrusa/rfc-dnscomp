@@ -2,11 +2,12 @@
 
 This document describes an application of data compression algorithms on DNS messages with the goal of reducing message size of frequent responses.
 The client proposes compression protocol which the server may use to compress an arbitrary part of the response.
+
 *TL;DR* this:
 
-* cuts the `IN .` (already label-compressed) response size to half
+* cuts the `IN .` *(already label-compressed)* response size by half
 * is applicable to any message type
-* is opt-in (unlike label compression)
+* is opt-in *(unlike label compression)*
 * ...and hopefully doesn't break the protocol.
 
 ## See it
