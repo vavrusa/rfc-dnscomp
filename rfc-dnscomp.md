@@ -71,7 +71,7 @@ and the remaining 6 bits are used for extended label type. [@RFC3363 section 3.]
 are rejected as malformed by unaware DNS implementations.
 
 The proposed compression method introduces an extended label type to indicate that the remainder of the message is compressed,
-and a and OPT RR option COMPRESS to declare compression support. To ensure compatibility with existing infrastructure, the new label type **SHOULD NOT** be used in a DNS query, and it **MAY** be used in DNS response only after the support is indicated by the presence of the COMPRESS option in the query.
+and an OPT RR option COMPRESS to negotiate compression support. To ensure compatibility with existing infrastructure, the new label type **MUST NOT** be used in a DNS query, and it **MAY** be used in DNS response only after the support is indicated by the presence of the COMPRESS option in the query.
 
 # How the remainder compression works
 
@@ -163,6 +163,10 @@ c.  The proposed remainder compression **MUST NOT** be present in domain name re
 
 Applications intercepting response messages may reject the message as malformed, but there is no legitimate application for
 tampering with responses known to the author.
+
+# Client considerations
+
+Client **MUST** follow fallback procedure as in [@RFC6891 section 6.2.2.].
 
 # Performance considerations
 
