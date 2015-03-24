@@ -157,11 +157,9 @@ thus a message can only be compressed once.
 The proposed label format may not be correctly processed by existing software, so the following considerations
 must be taken into account:
 
-a. DNS header is never compressed, as it does not contain a domain name label.
-
-b. The proposed remainder compression indicator **MUST NOT** be used in domain name query.
-
-c. The proposed remainder compression **MUST NOT** be present in domain name response, unless proposed by the requestor.
+a.  DNS header is never compressed, as it does not contain a domain name label.
+b.  The proposed remainder compression indicator **MUST NOT** be used in domain name query.
+c.  The proposed remainder compression **MUST NOT** be present in domain name response, unless proposed by the requestor.
 
 Applications intercepting response messages may reject the message as malformed, but there is no legitimate application for
 tampering with responses known to the author.
