@@ -7,7 +7,7 @@ This document describes an application of data compression algorithms on DNS mes
 The `make publish` builds a HTML version, the branch `gh-pages` contains a built `index.html` for GitHub Pages.
 
 * HTML at [vavrusa.github.io/rfc-dnscomp][ghpages]
-* Data and measurements in [data](data).
+* Examples and measurements in [data](data) directory
 
 ## Build it
 
