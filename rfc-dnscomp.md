@@ -75,8 +75,14 @@ and a and OPT RR option COMPRESS to declare compression support. To ensure compa
 
 # How the remainder compression works
 
-The client proposes a compression algorithm via the COMPRESS OPT option, this mandates that the client supports [@RFC6891] EDNS.
-A COMPRESS-aware server places compression indicator at any start of the label in the message, and then the compressed remainder of the message. If a client recognizes compression indicator, it decompresses the remainder of the message in its place.
+The client proposes a compression algorithm via the COMPRESS OPT option, this mandates that the both client and the server support [@RFC6891] EDNS.
+If the server doesn't support EDNS, no OPT RR is returned in the response and no compression occurs.
+A COMPRESS-aware server **MAY** place a compression indicator at any start of the label in the message, followed by the compressed remainder of the message.
+The server **SHOULD** use the client-proposed algorithm if it supports it, but it **MAY** use the mandatory algorithm as well.
+
+If a client recognizes compression indicator, it decompresses the remainder of the message in its place.
+If the server uses mandatory algorithm instead of negotiated, client **SHOULD** assume that the server doesn't support the negotiated algorithm,
+and **SHOULD** try different algorithm next time. If the response isn't compressed, the client **MUST NOT** presume that the server doesn't support it.
 
 # The COMPRESS OPT option
 
@@ -94,8 +100,12 @@ The option is encoded in 5 bytes as shown below.
     +-+-+-+-+-+-+-+-+
 Figure: OPT RR option COMPRESS format.
 
-The Algorithm field defines the compression algorithm proposed by the client.
-A value of zero indicates the default proposed compression algorithm.
+The Algorithm field defines the compression algorithm proposed by the client, denoted by an assigned number.
+There are 256 possible combinations, including the mandatory compression algorithm. In the case of exhaustion,
+a new OPT code should be proposed. A value of zero indicates the mandatory compression algorithm.
+
+The COMPRESS option **MAY** be used in the query to indicate compression request and negotiated algorithm.
+The use of COMPRESS option in the response is not defined.
 
 @TODO@
 
@@ -106,7 +116,7 @@ a. DEFLATE, code 0x00, MANDATORY
    A lossless compressed data format that compresses data using a combination of the LZ77 algorithm and Huffman coding.
    As specified in the [@RFC1951], the format can be implemented readily in a manner not covered by patents.
 
-b. LZ4, code 0x01
+b. LZ4, code 0x01 OPTIONAL
 
    LZ4 is a lossless data compression algorithm that is focused on compression and decompression speed.
    BSD licensed implementation written by Yann Collet, no RFC available to date.
@@ -127,7 +137,8 @@ The "01" denotes the extended label type, as defined in the [@RFC6891 section 5.
 The remaining part of the first octet "000001" defines a remainder compression indicator.
 The next octet represent the used compression algorithm.
 
-Note - a decompressed remainder of the message **MUST NOT** contain a compression pointer.
+Note - a decompressed remainder of the message **MUST NOT** contain a compression indicator,
+thus a message can only be compressed once.
 
 @TODO@
 
@@ -152,11 +163,16 @@ b. The proposed remainder compression indicator **MUST NOT** be used in domain n
 
 c. The proposed remainder compression **MUST NOT** be present in domain name response, unless proposed by the requestor.
 
-Applications intercepting response messages **MAY** misinterpret the message as malformed.
+Applications intercepting response messages may reject the message as malformed, but there is no legitimate application for
+tampering with responses known to the author.
 
 # Performance considerations
 
-@TODO@ Depends on algorithm and implementation, may be faster because of bandwidth savings, may be slower because of extra overhead.
+@TODO@
+@REMARK@ Depends on algorithm and implementation, may be faster because of bandwidth savings, may be slower because of extra overhead.
+@REMARK@ LZ4 for example shows over 480MB/s compression speed on a single core, this is almost equal to 1M 512B packets/sec per core.
+@REMARK@ Response using this draft may not use label compression.
+@REMARK@ TODO: measurements on performance (nr. cycles per compressed/uncompressed response)
 
 # Security considerations
 
@@ -176,4 +192,4 @@ even though the decompression algorithm may detect a corruption.
 # Appendix A. Evaluation on selected responses
 
 @TODO@
-
+@REMARK@ See https://github.com/vavrusa/rfc-dnscomp/tree/master/data
