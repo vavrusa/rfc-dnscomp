@@ -84,7 +84,7 @@ COMPRESS is an OPT RR [@!RFC6891] option, that can be included once in the RDATA
 
 The option is encoded in 5 bytes as shown below.
 
-{#fig:compress_opt type="ascii-art" align=center}
+{#fig-compress-opt type="ascii-art" align=center}
                          1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 3 3
      0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
     +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
@@ -121,7 +121,7 @@ b. LZ4, code 0x01 OPTIONAL
 
 This document proposes an alternative remainder compression indicator:
 
-{#fig:compr_indicator type="ascii-art" align=center}
+{#fig-compr-indicator type="ascii-art" align=center}
     +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
     | 0  1| 0  0  0  0  0  1|       ALGORITHM       |
     +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
