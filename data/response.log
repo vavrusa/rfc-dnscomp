@@ -1,0 +1,253 @@
++dnssec @a.root-servers.net . NS            
+
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 46390
+;; flags: qr aa rd; QUERY: 1, ANSWER: 14, AUTHORITY: 0, ADDITIONAL: 25
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 4096
+;; QUESTION SECTION:
+;.				IN	NS
+
+;; ANSWER SECTION:
+.			518400	IN	NS	l.root-servers.net.
+.			518400	IN	NS	f.root-servers.net.
+.			518400	IN	NS	g.root-servers.net.
+.			518400	IN	NS	d.root-servers.net.
+.			518400	IN	NS	j.root-servers.net.
+.			518400	IN	NS	a.root-servers.net.
+.			518400	IN	NS	k.root-servers.net.
+.			518400	IN	NS	m.root-servers.net.
+.			518400	IN	NS	c.root-servers.net.
+.			518400	IN	NS	e.root-servers.net.
+.			518400	IN	NS	b.root-servers.net.
+.			518400	IN	NS	h.root-servers.net.
+.			518400	IN	NS	i.root-servers.net.
+.			518400	IN	RRSIG	NS 8 0 518400 20150403050000 20150324040000 16665 . E0poyulHDtXlEftdYNFgMGCl9M5HwcaVIlxe7h6ZpeJm7xEDtLlgCX5V wQd5vazd80S2Q767BeMAKwiYVOYdT+jZvPaKlLUVpqJpb430OYsZRUQm +FpXnrP2tgi/2MjE9euXI7j3TBKqH5eZwsym+ukmmghnfiVTr0H/byi+ PW4=
+
+;; ADDITIONAL SECTION:
+l.root-servers.net.	3600000	IN	A	199.7.83.42
+l.root-servers.net.	3600000	IN	AAAA	2001:500:3::42
+f.root-servers.net.	3600000	IN	A	192.5.5.241
+f.root-servers.net.	3600000	IN	AAAA	2001:500:2f::f
+g.root-servers.net.	3600000	IN	A	192.112.36.4
+d.root-servers.net.	3600000	IN	A	199.7.91.13
+d.root-servers.net.	3600000	IN	AAAA	2001:500:2d::d
+j.root-servers.net.	3600000	IN	A	192.58.128.30
+j.root-servers.net.	3600000	IN	AAAA	2001:503:c27::2:30
+a.root-servers.net.	3600000	IN	A	198.41.0.4
+a.root-servers.net.	3600000	IN	AAAA	2001:503:ba3e::2:30
+k.root-servers.net.	3600000	IN	A	193.0.14.129
+k.root-servers.net.	3600000	IN	AAAA	2001:7fd::1
+m.root-servers.net.	3600000	IN	A	202.12.27.33
+m.root-servers.net.	3600000	IN	AAAA	2001:dc3::35
+c.root-servers.net.	3600000	IN	A	192.33.4.12
+c.root-servers.net.	3600000	IN	AAAA	2001:500:2::c
+e.root-servers.net.	3600000	IN	A	192.203.230.10
+b.root-servers.net.	3600000	IN	A	192.228.79.201
+b.root-servers.net.	3600000	IN	AAAA	2001:500:84::b
+h.root-servers.net.	3600000	IN	A	128.63.2.53
+h.root-servers.net.	3600000	IN	AAAA	2001:500:1::803f:235
+i.root-servers.net.	3600000	IN	A	192.36.148.17
+i.root-servers.net.	3600000	IN	AAAA	2001:7fe::53
+
++dnssec @a.root-servers.net NS cz                       
+
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 45783
+;; flags: qr rd; QUERY: 1, ANSWER: 0, AUTHORITY: 6, ADDITIONAL: 9
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 4096
+;; QUESTION SECTION:
+;cz.				IN	NS
+
+;; AUTHORITY SECTION:
+cz.			172800	IN	NS	d.ns.nic.cz.
+cz.			172800	IN	NS	c.ns.nic.cz.
+cz.			172800	IN	NS	b.ns.nic.cz.
+cz.			172800	IN	NS	a.ns.nic.cz.
+cz.			86400	IN	DS	54576 10 2 397E50C85EDE9CDE33F363A9E66FD1B216D788F8DD438A57A423A386 869C8F06
+cz.			86400	IN	RRSIG	DS 8 1 86400 20150403050000 20150324040000 16665 . 4e7DAZAlPRKNoS7hMwq+4BUTMAm1ZCr+EJ/CGK5/g6Uyz1SSa3NOrPT2 NGyaZDJOLy2sta+bKnZIXIqVynIvJ9McMGTVBoflvzLjsITLf2+knMIA HzCa1Nsh0+h8OuvwYL2JO8OZ69Z/MLGmlq4EVzmAwSJ1Q5YeJ+sJfvv6 Myg=
+
+;; ADDITIONAL SECTION:
+d.ns.nic.cz.		172800	IN	A	193.29.206.1
+d.ns.nic.cz.		172800	IN	AAAA	2001:678:1::1
+c.ns.nic.cz.		172800	IN	A	194.0.14.1
+c.ns.nic.cz.		172800	IN	AAAA	2001:678:11::1
+b.ns.nic.cz.		172800	IN	A	194.0.13.1
+b.ns.nic.cz.		172800	IN	AAAA	2001:678:10::1
+a.ns.nic.cz.		172800	IN	A	194.0.12.1
+a.ns.nic.cz.		172800	IN	AAAA	2001:678:f::1
+
++dnssec @a.ns.nic.cz. AAAA a.ns.nic.cz.
+
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 35408
+;; flags: qr aa rd; QUERY: 1, ANSWER: 2, AUTHORITY: 4, ADDITIONAL: 10
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;a.ns.nic.cz.			IN	AAAA
+
+;; ANSWER SECTION:
+a.ns.nic.cz.		1800	IN	AAAA	2001:678:f::1
+a.ns.nic.cz.		1800	IN	RRSIG	AAAA 5 4 1800 20150405125801 20150323125651 50442 nic.cz. B0OkAH6oDLbeXRA+/EnSJQMkPsZO18ockC6LecQ/88FdUDQ4STuwhO7d Ha182z9tzOpRCrz6rc1FvoO1hevHUMDSGVTOECL1QBgY6oQnzKDtaosI kvvPBdDS1RhCFYghiewKrZICx+sS5KrD3l4ujbYDHRG/pahevAUp5m9P N4s=
+
+;; AUTHORITY SECTION:
+nic.cz.			1800	IN	NS	a.ns.nic.cz.
+nic.cz.			1800	IN	NS	b.ns.nic.cz.
+nic.cz.			1800	IN	NS	d.ns.nic.cz.
+nic.cz.			1800	IN	RRSIG	NS 5 2 1800 20150406062843 20150323125651 50442 nic.cz. HdrIG3W+qGULVKtGUtssIotLruLPI7YZhzVngUYp1ziML0BcN1aB+KBY pRDMdfb21ug+a7gY4WP36qPKg0n7ywjkdxgYRsoQSIxToko12GgyLb/w gyglQPDOSLqt8I2ArIhnKxOOqBFCcmPrULeI6sAI/i6Taaq9FNG6IlsA 6XQ=
+
+;; ADDITIONAL SECTION:
+a.ns.nic.cz.		1800	IN	A	194.0.12.1
+b.ns.nic.cz.		1800	IN	A	194.0.13.1
+b.ns.nic.cz.		1800	IN	AAAA	2001:678:10::1
+d.ns.nic.cz.		1800	IN	A	193.29.206.1
+d.ns.nic.cz.		1800	IN	AAAA	2001:678:1::1
+a.ns.nic.cz.		1800	IN	RRSIG	A 5 4 1800 20150405211704 20150323125651 50442 nic.cz. uWR26q4vd/JDv84sOf1axjNPTdub97iY1A2eiZrkX9w6xUEff07GGJYM 32uPiE+WjfzkuVWgT6fuvP2LYY6MxaqJWip8tewWXnrKrMQFfj8h/lh6 w87SgDnXsT1ziHVsx999iP/ySDrvHj6tXPJEGio/6NqbDseFIaKmpqJa 5qI=
+b.ns.nic.cz.		1800	IN	RRSIG	A 5 4 1800 20150405134042 20150323125651 50442 nic.cz. eCJ/VUvcifl+XnvrppXi590Ncpx4AoBr/2ciRDmWoAJi3MntuT43RIvK nIMSgWcc5WG2o6G8HjLvrGVk4EIgbOXyeqh6jVD5Iqlf1OG80SXZkt8h 2E4Zp8rSoQ6/7BJQnpeZrJzrex7Yau/rvxdS5D1bze0hYKO6Utw6Xn3S nPk=
+b.ns.nic.cz.		1800	IN	RRSIG	AAAA 5 4 1800 20150405234800 20150323125651 50442 nic.cz. Rd/56mK/OUFlU+0TURY+12dCdFtgCllDPUoXADMVGS5GyDElvG5dF3DY trf7x7GD053XENv3bNNPfHSpcE+FHVOmK5QgadZINUMtkTNGgFsaVIPY fkG0e7KNmJkvHCO6d3hAmr0aInJWBKxDhng1Aq3quCJAkQmtdprH+qdA Kks=
+d.ns.nic.cz.		1800	IN	RRSIG	A 5 4 1800 20150405163202 20150323125651 50442 nic.cz. t5Pf6EzP8UlqDoLalbQ5Fr6axNT2F+YzevVYcdzFRoiSX5KraaIGbHuo FCHeFXC9jTd0XUC97NTP7KbD8MEQ2s+3/n2FPRLu4+6Gj6hh30KGTqhk 9CkjPCqrsLTHLPaa/xFfQ2AheTAytPC/BwLgsbYyUnj/Gv/wJ74k/J9A yS8=
+
++dnssec @a.ns.nic.cz. A non-existent-name.cz.
+
+;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 47743
+;; flags: qr aa rd; QUERY: 1, ANSWER: 0, AUTHORITY: 8, ADDITIONAL: 1
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;non-existent-name.cz.		IN	A
+
+;; AUTHORITY SECTION:
+cz.			900	IN	SOA	a.ns.nic.cz. hostmaster.nic.cz. 1427189922 900 300 604800 900
+2a9c9sk9oacu95sgnh7b4kdtk67qhn46.cz. 900 IN NSEC3 1 0 10 BB8BF1F4BB02AFA6 2A9D0DKOQ1TI1PDJJC59E74DO0M57VN1 NS SOA RRSIG DNSKEY NSEC3PARAM
+t5c9hrc3h60tk6st4a4t94ub9km1crah.cz. 900 IN NSEC3 1 0 10 BB8BF1F4BB02AFA6 T5CA4PSK2PHFFRCJK0D6Q465JJEE8CFQ NS
+7v9bjb30bsaeq9aerja11hl6cuib359m.cz. 900 IN NSEC3 1 0 10 BB8BF1F4BB02AFA6 7V9CQDP5GFGRUDTT7FMKFAK4MFG15AOS NS DS RRSIG
+cz.			18000	IN	RRSIG	SOA 10 1 18000 20150406134240 20150324083842 16610 cz. FBC+bSwu04HDHCJ6YY5RW913F4PJzv638sbkqkIXg56rwdMaAJqSyeUH rYz3uT9dS6nVvr3kYt7U4vDxl26M7DewTjKxpPTnlrTiatoMG0hmYAOp ia6mVBmrk2p2TYFqdgBzByVwgO3gQ5Gs3r+33bBGr5lGQW8wNSrO/hsD G9I=
+2a9c9sk9oacu95sgnh7b4kdtk67qhn46.cz. 900 IN RRSIG NSEC3 10 2 900 20150402230642 20150320070823 16610 cz. G/UhM29sK+CQWQ09wCn5yrwhpZzBK2NsWqSKFHJg7/atdM2coGq798GX FcNlPvHh5sMyNhFaSjV6kYc4HCkXxJzBS5IS9iiGdXH2EmBDDhYVgXe+ h6nToDjL7CmJWqqK3WsKmQYf2yFeS8z4VNoI0NB3y8nCw1F0cjUtp9a2 TfQ=
+t5c9hrc3h60tk6st4a4t94ub9km1crah.cz. 900 IN RRSIG NSEC3 10 2 900 20150405121542 20150322140826 16610 cz. hFyhyNu+8X36EHZK+LVVmrxhRUKMSNEwB//euq35L70S2cbZWRVX5Fgr D/WwCO0Yx2t+YJDH+4EJhNiQYiOeWyXUSHS6Y/l1elNHQXDCpnYXMUJt h0iGE2L7k/Vpa9rhun68Mxu0PgVNGSeIq74Soi/qUU78wb8oHJBdaFy6 eQU=
+7v9bjb30bsaeq9aerja11hl6cuib359m.cz. 900 IN RRSIG NSEC3 10 2 900 20150404020450 20150321220825 16610 cz. u6n0m9TwPo0+YdkVWLPWjpCAmKILscL9ZYx78P2Rvpw5lxpLHcWuT/AT 9Q3oS3s+Sx9Bzd4BE43zQpg/GH2SxvLt6cfjCK/CdKpIaSDOij6PqSwA WZl249wEnCZfpzCRcr4+0wnZCq5cxjSMysCeKh8le72/Ke6Yb+Ec3XkP y0I=
+
++edns=0 @a.root-servers.net . NS       
+
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 31636
+;; flags: qr aa rd; QUERY: 1, ANSWER: 13, AUTHORITY: 0, ADDITIONAL: 25
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1472
+;; QUESTION SECTION:
+;.				IN	NS
+
+;; ANSWER SECTION:
+.			518400	IN	NS	a.root-servers.net.
+.			518400	IN	NS	b.root-servers.net.
+.			518400	IN	NS	c.root-servers.net.
+.			518400	IN	NS	d.root-servers.net.
+.			518400	IN	NS	e.root-servers.net.
+.			518400	IN	NS	f.root-servers.net.
+.			518400	IN	NS	g.root-servers.net.
+.			518400	IN	NS	h.root-servers.net.
+.			518400	IN	NS	i.root-servers.net.
+.			518400	IN	NS	j.root-servers.net.
+.			518400	IN	NS	k.root-servers.net.
+.			518400	IN	NS	l.root-servers.net.
+.			518400	IN	NS	m.root-servers.net.
+
+;; ADDITIONAL SECTION:
+a.root-servers.net.	518400	IN	A	198.41.0.4
+b.root-servers.net.	518400	IN	A	192.228.79.201
+c.root-servers.net.	518400	IN	A	192.33.4.12
+d.root-servers.net.	518400	IN	A	199.7.91.13
+e.root-servers.net.	518400	IN	A	192.203.230.10
+f.root-servers.net.	518400	IN	A	192.5.5.241
+g.root-servers.net.	518400	IN	A	192.112.36.4
+h.root-servers.net.	518400	IN	A	128.63.2.53
+i.root-servers.net.	518400	IN	A	192.36.148.17
+j.root-servers.net.	518400	IN	A	192.58.128.30
+k.root-servers.net.	518400	IN	A	193.0.14.129
+l.root-servers.net.	518400	IN	A	199.7.83.42
+m.root-servers.net.	518400	IN	A	202.12.27.33
+a.root-servers.net.	518400	IN	AAAA	2001:503:ba3e::2:30
+b.root-servers.net.	518400	IN	AAAA	2001:500:84::b
+c.root-servers.net.	518400	IN	AAAA	2001:500:2::c
+d.root-servers.net.	518400	IN	AAAA	2001:500:2d::d
+f.root-servers.net.	518400	IN	AAAA	2001:500:2f::f
+h.root-servers.net.	518400	IN	AAAA	2001:500:1::803f:235
+i.root-servers.net.	518400	IN	AAAA	2001:7fe::53
+j.root-servers.net.	518400	IN	AAAA	2001:503:c27::2:30
+k.root-servers.net.	518400	IN	AAAA	2001:7fd::1
+l.root-servers.net.	518400	IN	AAAA	2001:500:3::42
+m.root-servers.net.	518400	IN	AAAA	2001:dc3::35
+
++edns=0 @a.root-servers.net NS cz      
+
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 58537
+;; flags: qr rd; QUERY: 1, ANSWER: 0, AUTHORITY: 4, ADDITIONAL: 9
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;cz.				IN	NS
+
+;; AUTHORITY SECTION:
+cz.			172800	IN	NS	d.ns.nic.cz.
+cz.			172800	IN	NS	c.ns.nic.cz.
+cz.			172800	IN	NS	b.ns.nic.cz.
+cz.			172800	IN	NS	a.ns.nic.cz.
+
+;; ADDITIONAL SECTION:
+d.ns.nic.cz.		172800	IN	A	193.29.206.1
+d.ns.nic.cz.		172800	IN	AAAA	2001:678:1::1
+c.ns.nic.cz.		172800	IN	A	194.0.14.1
+c.ns.nic.cz.		172800	IN	AAAA	2001:678:11::1
+b.ns.nic.cz.		172800	IN	A	194.0.13.1
+b.ns.nic.cz.		172800	IN	AAAA	2001:678:10::1
+a.ns.nic.cz.		172800	IN	A	194.0.12.1
+a.ns.nic.cz.		172800	IN	AAAA	2001:678:f::1
+
++edns=0 @a.ns.nic.cz. AAAA a.ns.nic.cz.
+
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 61019
+;; flags: qr aa rd; QUERY: 1, ANSWER: 1, AUTHORITY: 3, ADDITIONAL: 6
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;a.ns.nic.cz.			IN	AAAA
+
+;; ANSWER SECTION:
+a.ns.nic.cz.		1800	IN	AAAA	2001:678:f::1
+
+;; AUTHORITY SECTION:
+nic.cz.			1800	IN	NS	a.ns.nic.cz.
+nic.cz.			1800	IN	NS	b.ns.nic.cz.
+nic.cz.			1800	IN	NS	d.ns.nic.cz.
+
+;; ADDITIONAL SECTION:
+a.ns.nic.cz.		1800	IN	A	194.0.12.1
+b.ns.nic.cz.		1800	IN	A	194.0.13.1
+b.ns.nic.cz.		1800	IN	AAAA	2001:678:10::1
+d.ns.nic.cz.		1800	IN	A	193.29.206.1
+d.ns.nic.cz.		1800	IN	AAAA	2001:678:1::1
+
++edns=0 @a.ns.nic.cz. A non-existent-name.cz.
+
+;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 23883
+;; flags: qr aa rd; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+;; QUESTION SECTION:
+;non-existent-name.cz.		IN	A
+
+;; AUTHORITY SECTION:
+cz.			900	IN	SOA	a.ns.nic.cz. hostmaster.nic.cz. 1427189922 900 300 604800 900
+
